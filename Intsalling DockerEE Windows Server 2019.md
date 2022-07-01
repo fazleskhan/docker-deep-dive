@@ -43,7 +43,11 @@ Updated instruction from https://bcthomas.com/2019/02/getting-started-with-linux
 13. docker run --rm -it --platform=linux ubuntu bash
 14. docker run hello-world:nanoserver
 
-
 D. To update dockeree to the latest release 
 1. Install-Package -Name Docker -ProviderName DockerMSFTProvider -Update -Force
 2. Restart-service docker
+
+E. Networking
+The docker bridge network is not created on Windows Server 2019 installations.
+On Windows Server 2019 the default network is nat
+The hyper-v virtual machine that hosts docker needs to be attached to the nat network via the Hyper-V Manager
