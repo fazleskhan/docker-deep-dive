@@ -51,3 +51,11 @@ E. Networking
 The docker bridge network is not created on Windows Server 2019 installations.
 On Windows Server 2019 the default network is nat
 The hyper-v virtual machine that hosts docker needs to be attached to the nat network via the Hyper-V Manager
+
+F. Logging
+By default docker container logs locally and logs are lost when a container is removed.
+The host needs to configured to send logs to the host.
+1. Added "log-driver": "etwlogs" to C:\ProgramData\docker\config\daemon.json 
+
+https://docs.docker.com/config/containers/logging/etwlogs/
+https://docs.docker.com/config/containers/logging/configure/
